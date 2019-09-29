@@ -21,7 +21,6 @@ export class HeroesComponent implements OnInit {
     this.listaHeroes = [];
 
     this.listaHeroes = this.heroesServices.getHeroes();
-    console.log(this.listaHeroes.length);
   }
 
   verHeroe(index: number) {

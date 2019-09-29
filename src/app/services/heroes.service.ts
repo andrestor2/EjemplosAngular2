@@ -57,11 +57,14 @@ export class HeroesServices {
         ];
 
     constructor() {
-        console.log("Servicio listo");
     }
 
     getHeroes() {
         return this.heroes;
+    }
+
+    getHeroe(indice: number) {
+        return this.heroes[indice];
     }
 }
 
