@@ -66,6 +66,25 @@ export class HeroesServices {
     getHeroe(indice: number) {
         return this.heroes[indice];
     }
+
+    buscarHeroes(termino: string) {
+        let heroesArr: Heroe[] = [];
+        let cadena = termino.toLowerCase();
+        if (cadena.length > 0) {
+            this.heroes.forEach((heroe: Heroe) => {
+                if (cadena.length > 1) {
+                    if (heroe.nombre.toLowerCase().indexOf(cadena) >= 0) {
+                        heroesArr.push(heroe);
+                    }
+                } else {
+                    if (heroe.nombre.toLowerCase().indexOf(cadena) === 0) {
+                        heroesArr.push(heroe);
+                    }
+                }
+            });
+        }
+        return heroesArr;
+    }
 }
 
 export interface Heroe {
