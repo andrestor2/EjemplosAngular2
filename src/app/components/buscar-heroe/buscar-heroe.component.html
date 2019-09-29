@@ -1,0 +1,23 @@
+<h1> Resultado busqueda <small>"{{textoBuscado}}"</small></h1>
+<hr>
+
+
+<div class="row animated fadeIn fast" *ngIf="heroesEncontrados.length === 0">
+    <div calss="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados con el término: {{ textoBuscado }}
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+
+    <div class="card animated fadeIn fast" *ngFor="let heroe of heroesEncontrados, let i = index">
+        <img [src]="heroe.img" class="card-img-top img-fluid" [alt]="heroe.nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{ heroe.nombre }}</h5>
+            <p class="card-text">{{ heroe.bio }}</p>
+            <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
+        </div>
+    </div>
+</div>
