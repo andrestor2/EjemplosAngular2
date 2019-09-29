@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-heroe-tarjeta',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroeTarjetaComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  @Input() heroe: any = {};
+  @Input() index: number;
+  @Output() seleccionado: EventEmitter<number>;
+  constructor(
+    private router: Router
+  ) {
+    this.seleccionado = new EventEmitter();
   }
 
+  ngOnInit() {
+
+
+  }
+
+  verHeroe() {
+    this.seleccionado.emit(this.index);
+  }
 }
