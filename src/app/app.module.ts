@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 //Rutas
 import { APP_ROUTING } from "./app.routes";
@@ -16,7 +16,11 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { BuscarHeroeComponent } from './components/buscar-heroe/buscar-heroe.component';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
 
+registerLocaleData(localeEs);
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,13 +30,14 @@ import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.
     HeroesComponent,
     HeroeComponent,
     BuscarHeroeComponent,
-    HeroeTarjetaComponent
+    HeroeTarjetaComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [HeroesServices],
+  providers: [HeroesServices, { provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

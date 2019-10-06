@@ -1,0 +1,116 @@
+<h1>Pipes</h1>
+<br>
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th> Variable </th>
+                <th>Pipe</th>
+                <th>Producto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>uppercase</td>
+                <td>{{ nombre | uppercase }}</td>
+            </tr>
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>lowercase</td>
+                <td>{{ nombre | lowercase }}</td>
+            </tr>
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>slice:3</td>
+                <td>{{ nombre | slice:3 }}</td>
+            </tr>
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>slice:0:3</td>
+                <td>{{ nombre | slice:0:3 }}</td>
+            </tr>
+            <tr>
+                <td>{{ arreglo }}</td>
+                <td>slice:0:3</td>
+                <td>{{ arreglo | slice:0:3 }}</td>
+            </tr>
+            <tr>
+                <td>{{ PI }}</td>
+                <td>number:'3.0-0'</td>
+                <td>{{ PI | number:'3.0-0' }}</td>
+            </tr>
+            <tr>
+                <td>{{ PI }}</td>
+                <td>number:'1.0-2'</td>
+                <td>{{ PI | number:'3.0-2' }}</td>
+            </tr>
+            <tr>
+                <td>{{ value }}</td>
+                <td>percet</td>
+                <td>{{ value | percent }}</td>
+            </tr>
+            <tr>
+                <td>{{ value }}</td>
+                <td>percent:'2.2-2'</td>
+                <td>{{ value | percent:'2.2-2' }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>Currency</td>
+                <td>{{ salario | currency }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>Currency:'COP'</td>
+                <td>{{ salario | currency:'COP' }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>Currency:'PEN':true</td>
+                <td>{{ salario | currency:'PEN':true }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>Currency:'EUR':true</td>
+                <td>{{ salario | currency:'EUR':true:'4.0-0' }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>number:'.2-2'</td>
+                <td>{{ salario | number:'.2-2' }}</td>
+            </tr>
+            <tr>
+                <td>{{ valorDePromesa }}</td>
+                <td>async</td>
+                <td>{{ valorDePromesa | async }}</td>
+            </tr>
+            <tr>
+                <td>{{ fechaI }}</td>
+                <td>date</td>
+                <td>{{ fechaI | date }}</td>
+            </tr>
+            <tr>
+                <td>{{ fechaI }}</td>
+                <td>date:'medium'</td>
+                <td>{{ fechaI | date:'medium' }}</td>
+            </tr>
+            <tr>
+                <td>{{ fechaI }}</td>
+                <td>date:'MMMM - dd'</td>
+                <td>{{ fechaI | date:'MMMM - dd' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>Slice arreglos</h4>
+    <small>Se condiciona el arreglo para mostrar posiciones del 5 a 20 (slice:5:20)</small>
+    <ul>
+        <li *ngFor="let item of arreglo | slice:5:20">{{ item }}</li>
+    </ul>
+
+    <h4>JSON</h4>
+    <pre>
+    {{ heroe | json }}
+    </pre>
+</div>
