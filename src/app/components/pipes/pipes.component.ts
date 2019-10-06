@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipesComponent implements OnInit {
 
-  
   nombre = "Fernando";
+  nombre2 = "fernando alBerTo herReRa LondoDÑo"
   arreglo = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   PI = Math.PI;
   value = 0.23455;
@@ -33,7 +33,8 @@ export class PipesComponent implements OnInit {
 
   fechaI = new Date();
 
-
+  video = 'GQQDPI3hWYo';
+  activar: boolean = true;
 
   constructor() { }
 

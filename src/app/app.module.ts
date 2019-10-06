@@ -19,6 +19,9 @@ import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.
 import { PipesComponent } from './components/pipes/pipes.component';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+import { CapitalizadoPipe } from './components/pipes/custom-pipe/capitalizado.pipe';
+import { DomseguroPipe } from './components/pipes/domseguro.pipe';
+import { ContrasenaPipe } from './components/pipes/custom-pipe/contrasena.pipe';
 
 registerLocaleData(localeEs);
 @NgModule({
@@ -31,7 +34,10 @@ registerLocaleData(localeEs);
     HeroeComponent,
     BuscarHeroeComponent,
     HeroeTarjetaComponent,
-    PipesComponent
+    PipesComponent,
+    CapitalizadoPipe,
+    DomseguroPipe,
+    ContrasenaPipe
   ],
   imports: [
     BrowserModule,
